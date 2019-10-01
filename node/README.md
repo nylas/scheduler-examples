@@ -9,7 +9,7 @@ This example uses the [Express](https://expressjs.com/) web framework for NodeJS
 
 ## Get an Application Client ID & Client Secret from Nylas
 
-To do this, make login to (or create) your Nylas developer account using the [Nylas Dashboard](https://dashboard.nylas.com/) account. You should see your `client_id` and `client_secret` on the dashboard.
+To do this, login (or create) your Nylas developer account using the [Nylas Dashboard](https://dashboard.nylas.com/) account. You should see your `client_id` and `client_secret` on the dashboard.
 
 ## Set Up HTTPS
 
