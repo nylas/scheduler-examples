@@ -1,6 +1,6 @@
 # Example: Hosted OAuth + Scheduling
 
-This is an example project that implements login via [Nylas Hosted OAuth flow](https://docs.nylas.com/reference#oauth) and demonstrates both basic and server-side integration with the Nylas Scheduling offering.
+This is an example project that implements login via [Nylas Hosted OAuth flow](https://docs.nylas.com/reference#oauth) and demonstrates both instant and smart integration types with the Nylas Scheduler.
 
 Try it out now! Visit [http://nylas-customer-example.herokuapp.com/](http://nylas-customer-example.herokuapp.com/).
 
@@ -9,11 +9,11 @@ This example uses the [Flask](http://flask.pocoo.org/) web framework for Python.
 
 ## Get an Application Client ID & Client Secret from Nylas
 
-To do this, make a [Nylas Developer](https://developer.nylas.com/) account. You should see your client ID and client secret on the dashboard, once you've logged in on the [Nylas Developer](https://developer.nylas.com/) website.
+To do this, make login to (or create) your Nylas developer account using the [Nylas Dashboard](https://dashboard.nylas.com/) account. You should see your `client_id` and `client_secret` on the dashboard.
 
 ## Update the `config.json` File
 
-Open the `config.json` file in this directory, and replace the example client ID and client secret with the real values that you got from the Nylas Developer dashboard. You'll also need to replace the example secret key with any random string of letters and numbers: a keyboard mash will do.
+Open the `config.json` file in this directory, and replace the example `client_id` and `client_secret` with the real values that you got from the Nylas Developer dashboard. You'll also need to replace the example secret key with any random string of letters and numbers: a keyboard mash will do.
 
 ## Set Up HTTPS
 
