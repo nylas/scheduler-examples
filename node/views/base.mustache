@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+    ol li {
+      margin-bottom: 15px;
+    }
+    </style>
+    <meta charset="utf-8">
+    <title>Nylas Scheduling Demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container" style="max-width: 800px; margin: auto;">
+      {{#flash}}
+        {{#messages}}
+          <div class="alert alert-warning" role="alert" style="margin-top:15px;">{{message}}</div>
+        {{/messages}}
+      {{/flash}}
+      
+      <h1>Nylas Scheduling Demo</h1>
+      {{> authorization_partial}}
+    </div>
+  </body>
+</html>
