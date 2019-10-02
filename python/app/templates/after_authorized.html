@@ -8,7 +8,7 @@
 <hr />
 
 <!-- Add the Nylas javascript for displaying built in scheduling UI -->
-<script src="https://schedule.nylas.com/nylas-ui/v1.0/nylas-ui.js" type="text/javascript"></script>
+<script src="https://schedule.nylas.com/schedule-editor/v1.0/schedule-editor.js" type="text/javascript"></script>
 
 <!-- Add a tiny dark mode implementation to demo theme support in the Nylas Scheduling UI -->
 <style id="theme-overrides"></style>
@@ -40,10 +40,10 @@ toggleTheme();
 <script>
   var btn = document.getElementById('show-pages');
   btn.addEventListener('click', function() {
-    nylas.scheduling.show({
+    nylas.scheduler.show({
       auth: {
         // Nylas API token of the current user is provided to the modal
-        nylasAPIToken: "{{ session['access_token'] }}",
+        accessToken: "{{ session['access_token'] }}",
       },
       style: {
         tintColor: inDarkMode ? '#1B95E0' : '#6130c2',
@@ -113,7 +113,7 @@ toggleTheme();
   </table>
   <script>
     function onEdit(pageEditToken) {
-      nylas.scheduling.show({
+      nylas.scheduler.show({
         auth: {
           pageEditToken: pageEditToken,
         },

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nylas Scheduler Simple Example</title>
+    <script src="https://schedule.nylas.com/schedule-editor/v1.0/schedule-editor.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <button type="button" id="schedule-editor">Open Schedule Editor</button>
+
+    <script>
+      var btn = document.getElementById('schedule-editor');
+      btn.addEventListener('click', function() {
+        nylas.scheduler.show({
+          auth: {
+            // Note: To get quick access to a Nylas access_token for testing,
+            // login to https://dashboard.nylas.com and then click "Accounts" 
+            // and then "Auth Account". After authenticating your access_token
+            // will appear at the top of the dashboard
+            accessToken: "NYLAS_ACCESS_TOKEN", // Account access_token with active calendar scope
+          },
+          style: {
+            // Style the schedule editor
+            tintColor: '#32325d',
+            backgroundColor: 'white',
+          },
+          defaults: {
+            event: {
+              title: '30-min Coffee Meeting',
+              duration: 30,
+            },
+          },
+        });
+      });
+
+    </script>
+
+  </body>
+
+</html>
