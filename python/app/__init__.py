@@ -100,7 +100,8 @@ def index_create_page():
         "api_tokens": [session['access_token']]
     }
 
-    response = requests.post('https://schedule.api.nylas.com/manage/pages', json=json)
+    response = requests.post('https://schedule.api.nylas.com/manage/pages', json=json,
+                             headers=dict(Authorization="Bearer " + session['access_token']))
     if response.status_code != 201:
         flash(response.json()['error'])
     return redirect(url_for('index'))
