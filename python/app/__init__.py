@@ -62,7 +62,7 @@ def index():
         # about the current user, and pass that to the template.
         try:
             account = client.account
-        except requests.HTTPError as e:
+        except requests.HTTPError:
             # The user's token may be invalid - log them out.
             return redirect("/logout")
 
@@ -117,7 +117,7 @@ def login_callback():
     return redirect("/")
 
 
-@app.route("/logout", methods=['POST'])
+@app.route("/logout", methods=['GET', 'POST'])
 def logout():
     del session['access_token']
     return redirect("/")
