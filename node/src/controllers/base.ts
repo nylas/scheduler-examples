@@ -53,7 +53,7 @@ router.post("/", async (req: Request, res: Response) => {
     body: {
       name: req.body["name"],
       slug: req.body["slug"],
-      api_tokens: [accessToken],
+      access_tokens: [accessToken],
       config: {
         // You can provide as few or as many page configuration options as you like.
         // Check out the Scheduling Page documentation for a full list of settings.

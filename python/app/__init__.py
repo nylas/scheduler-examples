@@ -3,6 +3,7 @@ import os
 import sys
 import textwrap
 import requests
+from json import dumps
 from flask import Flask, session, request, render_template, redirect, url_for, flash
 from flask_talisman import Talisman
 from werkzeug.contrib.fixers import ProxyFix
@@ -97,12 +98,14 @@ def index_create_page():
                 "title": request.form["event_title"],
             },
         },
-        "api_tokens": [session['access_token']]
+        "access_tokens": [session['access_token']]
     }
 
     response = requests.post('https://schedule.api.nylas.com/manage/pages', json=json)
     if response.status_code != 201:
-        flash(response.json()['error'])
+        data = response.json()
+        print(dumps(data))
+        flash(data['message'])
     return redirect(url_for('index'))
 
 @app.route("/login_callback")
