@@ -2,8 +2,6 @@
 
 This is an example project that implements login via [Nylas Hosted OAuth flow](https://docs.nylas.com/reference#oauth) and demonstrates both instant and smart integration types with the Nylas Scheduler.
 
-Try it out now! Visit [http://nylas-customer-example-nodejs.herokuapp.com/](http://nylas-customer-example-nodejs.herokuapp.com/).
-
 This example uses the [Express](https://expressjs.com/) web framework for NodeJS and is written in TypeScript. In order to successfully run this example and go through the Nylas OAuth flow, you need to follow the steps below.
 
 
