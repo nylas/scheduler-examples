@@ -48,8 +48,5 @@ Once the server is running, visit the ngrok URL in your browser to test it out!
 
 ## Troubleshooting
 
-* Make sure you are visiting your ngrok URL and not the localhost.
-* If you want to use the localhost before starting your server run `export OAUTHLIB_INSECURE_TRANSPORT=1`
-* Update the port in `app.ts` `app.set("port", process.env["PORT"] || 3000);`.
-* Update the `const redirectURI` in `base.ts`.
-* Add the missing `/src/public/css/main.scss` file. The file can be blank.
+* For OAuth to succeed, you need to visit the Ngrok URL in your browser, not localhost.
+* For OAuth to succeed, you need to pass the Ngrok redirect URL with the "/login_callback" path to the app as an environment variable.
