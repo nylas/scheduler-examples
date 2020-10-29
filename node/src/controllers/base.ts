@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import request from "request-promise";
 import Nylas from "nylas";
 
-const redirectURI =
+const redirectURI = process.env.REDIRECT_URI || 
   "https://nylas-customer-example-nodejs.herokuapp.com/login_callback";
 
 const router = express.Router();

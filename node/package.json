@@ -9,21 +9,10 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "start": "npm run serve",
-    "build": "npm run build-sass && npm run build-ts && npm run copy-static-assets",
+    "start": "npm run build && npm run serve",
+    "build": "tsc",
     "serve": "node dist/server.js",
-    "watch-node": "nodemon dist/server.js",
-    "watch": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run watch-node\"",
-    "test": "jest --forceExit --coverage --verbose",
-    "watch-test": "npm run test -- --watchAll",
-    "build-ts": "tsc",
-    "watch-ts": "tsc -w",
-    "build-sass": "node-sass src/public/css/main.scss dist/public/css/main.css",
-    "watch-sass": "node-sass -w src/public/css/main.scss dist/public/css/main.css",
-    "copy-static-assets": "ts-node copyStaticAssets.ts",
-    "debug": "npm run build && npm run watch-debug",
-    "serve-debug": "nodemon --inspect dist/server.js",
-    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run serve-debug\""
+    "test": "jest --forceExit --coverage --verbose"
   },
   "dependencies": {
     "async": "^3.0.1",
@@ -73,8 +62,6 @@
     "chai": "^4.2.0",
     "concurrently": "^4.1.0",
     "jest": "^24.8.0",
-    "node-sass": "^4.12.0",
-    "nodemon": "^1.19.1",
     "shelljs": "^0.8.3",
     "supertest": "^4.0.2",
     "ts-jest": "^24.0.2",

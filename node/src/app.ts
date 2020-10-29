@@ -16,8 +16,9 @@ const NylasClientSecret = process.env["NYLAS_OAUTH_CLIENT_SECRET"];
 
 if (!NylasClientID || !NylasClientSecret) {
   console.warn(`
-    To run this example, set the NYLAS_OAUTH_CLIENT_ID and NYLAS_OAUTH_CLIENT_SECRET
-    environment variables using your app's configuration.
+    To run this example, pass the NYLAS_OAUTH_CLIENT_ID and NYLAS_OAUTH_CLIENT_SECRET
+    environment variables when launching the service. eg:\n
+    REDIRECT_URI=https://ad172180.ngrok.io/login_callback NYLAS_OAUTH_CLIENT_ID=XXX NYLAS_OAUTH_CLIENT_SECRET=XXX npm start
   `);
   process.exit(1);
 }
@@ -35,7 +36,7 @@ const app = express();
 app.engine("mustache", consolidate.mustache);
 
 // Express configuration
-app.set("port", process.env["PORT"] || 3000);
+app.set("port", process.env["PORT"] || 5000);
 app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "mustache");
 app.use(compression());

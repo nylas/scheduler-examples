@@ -21,8 +21,6 @@ ngrok http 5000
 
 Notice that ngrok will show you two "forwarding" URLs, which may look something like `http://ed90abe7.ngrok.io` and `https://ed90abe7.ngrok.io`. (The hash subdomain will be different for you.) You'll be using the second URL, which starts with `https`.
 
-Alternatively, you can set the `OAUTHLIB_INSECURE_TRANSPORT` environment variable in your shell, to disable the HTTPS check. That way, you'll be able to use `localhost` to refer to your app, instead of an ngrok URL. However, be aware that you won't be able to do this when you deploy your app to production, so it's usually a better idea to set up HTTPS properly.
-
 ## Set the Nylas Callback URL
 
 Once you have a HTTPS URL that points to your computer, you'll need to tell Nylas about it. On the [Nylas Dashboard](https://dashboard.nylas.com) click on the Application Dropdown Menu on the left, then "View all Applications". From there, select "Edit" for the app you'd like to use and select the "Application Callbacks" tab. Paste your HTTPS URL into the text field, and add `/login_callback` after it. For example, if your HTTPS URL is `https://ad172180.ngrok.io`, then you would put `https://ad172180.ngrok.io/login_callback` into the text field in the "Application Callbacks" tab.
@@ -39,10 +37,10 @@ npm install
 
 ## Run the Example
 
-Finally, run the example project like this:
+Finally, run the example project like this, specifying the redirect URL you configured along with your Nylas client ID and secret as environment variables:
 
 ```
-NYLAS_OAUTH_CLIENT_ID=XXX NYLAS_OAUTH_CLIENT_SECRET=XXX npm run watch
+REDIRECT_URI=https://ad172180.ngrok.io/login_callback NYLAS_OAUTH_CLIENT_ID=XXX NYLAS_OAUTH_CLIENT_SECRET=XXX npm start
 ```
 
 Once the server is running, visit the ngrok URL in your browser to test it out!
