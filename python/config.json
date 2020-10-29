@@ -1,0 +1,5 @@
+{
+    "SECRET_KEY": "any-random-string",
+    "NYLAS_OAUTH_CLIENT_ID": "your-client-id",
+    "NYLAS_OAUTH_CLIENT_SECRET": "your-client-secret"
+}
