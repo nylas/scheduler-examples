@@ -36,10 +36,10 @@ Then click the "Add Callback" button to save.
 
 ## Install the Dependencies
 
-This project depends on a few third-party Python modules, like Flask. These dependencies are listed in the `requirements.txt` file in this directory. To install them, use the `pip` tool, like this:
+This project depends on a few third-party Python modules, like Flask. These dependencies are listed in the `requirements.txt` file in this directory. To get started, install [pipenv](https://pypi.org/project/pipenv/) and run the command below to setup your python virtualenv for the example app:
 
 ```
-pip install -r requirements.txt
+pipenv install
 ```
 
 ## Run the Example
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 Finally, run the example project like this:
 
 ```
-python server.py
+pipenv run flask run
 ```
 
 Once the server is running, visit the ngrok URL in your browser to test it out!
